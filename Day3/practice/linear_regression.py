@@ -13,9 +13,3 @@ model.fit(X_train, y_train)
 
 mse = root_mean_squared_error(y_test, model.predict(X_test))
 print("Mean Squared Error: ", mse)
-
-
-
-
-
-
