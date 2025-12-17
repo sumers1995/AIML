@@ -20,8 +20,28 @@ class User(Base):
     
 Base.metadata.create_all(engine)
 
-select_user = session.execute(select(User).where(User.id == 1)).first()[0]
-query_user = session.query(User).filter(User.id == 1).first()
-print("Select: ", select_user)
-print("Query: ", query_user)
-print("Truth: ", select_user is query_user)
+# stmt = select('*').select_from(User)
+# print(session.execute(stmt))
+
+selection = select(User)
+query = selection.where(User.id == 1)
+user = session.execute(query)
+first_user = user.first()
+user_obj = first_user[0]
+user_name = user_obj.name
+
+print("Selection: ", selection)
+print("Query: ", query)
+print("User: ", user)
+print("First User: ", first_user)
+print("User Object: ", user_obj)
+print("User Name: ", user_name)
+
+
+
+
+# select_user = session.execute(select(User).where(User.id == 1)).first()[0]
+# query_user = session.query(User).filter(User.id == 1).first()
+# print("Select: ", select_user)
+# print("Query: ", query_user)
+# print("Truth: ", select_user is query_user)
