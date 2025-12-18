@@ -29,3 +29,4 @@ def predict(test, k: int) -> (int, float):
 prediction = predict(test_sample, 20)
 print("Prediction: ", prediction[0])
 print("Probability: ", prediction[1])
+
