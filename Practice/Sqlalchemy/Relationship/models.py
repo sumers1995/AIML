@@ -2,13 +2,14 @@ from sqlalchemy import Column, Integer, String, create_engine, ForeignKey
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship, Mapped, mapped_column
 
 dialect = "postgresql"
+driver = ""
 user = "postgres"
 pwd = "12345"
 host = "localhost"
 port = "5432"
 db_name = "relationship_db"
 
-engine = create_engine(f"{dialect}://{user}:{pwd}@{host}:{port}/{db_name}")
+engine = create_engine(f"{dialect}+{driver}://{user}:{pwd}@{host}:{port}/{db_name}")
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
