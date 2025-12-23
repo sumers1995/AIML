@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import ollama
 
@@ -48,14 +48,16 @@ class Message(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
-    messages: list
+    messages: list[Message]
     
 @app.post("/ollama_chat/")
 def ollama_response(chat_request: ChatRequest):
     try:
-        message_dict = []
-        for message in chat_request.messages:
-            message_dict.append(message)
-        response = ollama.chat(model=model, messages=message_dict)
+        return {"response": chat_request.messages[0]}
+        # message_dict = []
+        # for message in chat_request.messages:
+        #     message_dict.append(message)
+        # response = ollama.chat(model=model, messages=message_dict)
+        # return {"response": response['response']}
     except Exception as e:
         return {"error": str(e)}
