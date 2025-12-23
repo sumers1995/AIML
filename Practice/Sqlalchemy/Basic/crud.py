@@ -58,8 +58,8 @@ def check_exists(id: Optional[int] = None, name: Optional[str] = None) -> bool:
 
 # create_users()
 # print(get_all_users())
-# print(get_user(3).name)
+print(get_user(3))
 # print(update_user(3, "Jonny"))
 # print(add_user("Ramesh", 37))
 # print(check_exists(name="Sumer"))
-print(filter_by_age(30))
+# print(filter_by_age(30))
