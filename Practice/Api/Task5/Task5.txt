@@ -1,0 +1,27 @@
+## **Task 5: Audit Logs & Soft Delete System (Production-Grade)**
+
+### **Objective**
+
+Track every critical change in the system.
+
+### **Entities**
+
+- `AuditLog`
+- `User`
+- `Order`
+
+### **Events to Log**
+
+- User created / updated / deleted
+- Order status change
+- Failed login attempts
+
+### **Endpoints**
+
+- `GET /audit-logs?entity=&action=&date_range=`
+
+### **Validation Rules**
+
+- Date range must be valid
+- Admin-only access
+- Pagination mandatory

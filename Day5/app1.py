@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import ollama
 
 app = FastAPI()
-model = 'gemma3:270m'
+model = 'llama3.2:1b'
 
 class DataInBody(BaseModel):
     prompt: str

@@ -1,0 +1,41 @@
+## **Task 3: Order Management API (Business Logic Heavy)**
+
+### **Objective**
+
+Implement order placement and tracking.
+
+### **Entities**
+
+- `User`
+- `Order`
+- `OrderItem`
+- `Product`
+
+### **Endpoints**
+
+- `POST /orders`
+- `GET /orders/{id}`
+- `GET /users/{id}/orders`
+- `PATCH /orders/{id}/status`
+
+### **Validation Rules**
+
+- Order must contain at least 1 item
+- Quantity must be > 0
+- Product stock must be sufficient
+- Order status transitions must be valid
+    
+    (`CREATED → PAID → SHIPPED → DELIVERED`)
+    
+
+### **Critical Logic**
+
+- Reduce product stock atomically
+- Rollback transaction on failure
+
+### **Key Concepts**
+
+- Database transactions
+- Dependency injection
+- Enum validation using Pydantic
+- Business-rule validation beyond schema

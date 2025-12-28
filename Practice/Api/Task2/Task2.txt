@@ -1,0 +1,29 @@
+## **Task 2: Product & Inventory API (Relational Modeling)**
+
+### **Objective**
+
+Manage products with stock control.
+
+### **Entities**
+
+- `Product`
+- `Category`
+
+### **Endpoints**
+
+- `POST /categories`
+- `POST /products`
+- `GET /products?category_id=&min_price=&max_price=`
+- `PATCH /products/{id}/stock`
+
+### **Validation Rules**
+
+- Price must be > 0
+- Stock must be >= 0
+- Category must exist before assigning product
+- Product name must be unique per category
+
+### **Advanced Validation**
+
+- Custom Pydantic validators
+- Cross-field validation (price vs discount)

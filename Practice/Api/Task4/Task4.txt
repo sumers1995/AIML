@@ -1,0 +1,31 @@
+## **Task 4: Authentication & Authorization API (Security Focused)**
+
+### **Objective**
+
+Implement JWT-based authentication.
+
+### **Endpoints**
+
+- `POST /auth/register`
+- `POST /auth/login`
+- `GET /me`
+- `GET /admin/users`
+
+### **Validation Rules**
+
+- Strong password policy
+- Invalid login attempts throttled
+- Token expiry validation
+
+### **Security Requirements**
+
+- Password hashing (bcrypt)
+- JWT access & refresh tokens
+- Role-based access (`USER`, `ADMIN`)
+
+### **Key Concepts**
+
+- OAuth2PasswordBearer
+- Dependency-based authorization
+- Custom exception handling
+- Pydantic response filtering (exclude password)
