@@ -1,12 +1,10 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, select
-from config import db_settings, sec_settings
+from config import db_settings
 from models import Base, Employee, EmployeeCreate
 from typing import Annotated
 from fastapi import Depends, HTTPException, status
 from argon2 import PasswordHasher
-import jwt
-from datetime import datetime, timedelta
 
 from utils import generate_token
 
